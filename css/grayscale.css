@@ -371,3 +371,769 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
+
+.hidden{
+    display:none;
+}
+
+.unhidden{
+    display:block;
+}
+
+.modal .modal-close, .contact-modal .switch-form-type a, .position-apply-button,
+.product-link, .projects-footer .get-in-touch .button, .work-project .work-project-content .work-project-link,
+.contact-form input[type='submit'], .form-state .button {
+    display: inline-block;
+    padding: 0 20px;
+    height: 42px;
+    line-height: 42px;
+    border: none;
+    background: #333333;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", sans-serif;
+    font-size: 0.875em;
+    font-weight: 400;
+    user-select: none;
+    white-space: nowrap;
+    -webkit-appearance: none;
+    -webkit-user-select: none
+}
+
+/*Contact form CSS*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #34363a;
+    background: rgba(52, 54, 58, 0.97);
+    opacity: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)
+}
+
+.modal-visible .modal {
+    display: block;
+    z-index: 9999
+}
+
+body.animate .modal {
+    opacity: 1
+}
+
+.modal .modal-close {
+    display: block;
+    width: 100px;
+    padding: 0 5px 0 12px;
+    border: 2px solid white;
+    border-color: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8em;
+    font-weight: 700;
+    height: 36px;
+    line-height: 35px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-transition: background-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: background-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: background-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: background-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)
+}
+
+.modal .modal-close:hover, .modal .modal-close:focus {
+    background: #e34747;
+    background: rgba(227, 71, 71, 0.75);
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.6)
+}
+
+.modal .modal-close:after {
+    background-repeat: no-repeat;
+    background-size: 9px 9px;
+    background-position: center center;
+    width: 9px;
+    height: 9px;
+    content: "";
+    float: right;
+    display: block;
+    margin-top: 12px;
+    padding-left: 15px;
+    line-height: 35px;
+    opacity: 0.75
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.75) {
+    .modal .modal-close:after {
+        -webkit-background-size: 9px auto;
+        -moz-background-size: 9px auto;
+        -o-background-size: 9px auto;
+        background-size: 9px auto;
+        background-image: url("images/videoClose.png")
+    }
+}
+
+@media (max-width: 568px){.modal .modal-close {
+        display: inline-block
+    }
+}
+
+@media (min-width: 569px) and (max-width: 1023px){.modal {
+        padding-top: 100px;
+        padding-bottom: 100px
+    }
+
+    .modal .modal-close {
+        float: right;
+        position: relative;
+        top: -60px
+    }
+}
+
+@media (min-width: 1024px){.modal {
+        padding-top: 100px;
+        padding-bottom: 100px
+    }
+
+    .modal .modal-close {
+        float: right;
+        position: relative;
+        top: -60px
+    }
+}
+
+.contact-modal {
+    color: #9a9a9a
+}
+
+.contact-modal .contact-modal-title {
+    clear: both;
+    color: white;
+    text-align: center
+}
+
+@media (max-width: 568px){.contact-modal .contact-modal-title {
+        margin-top: 40px;
+        font-size: 1.125em;
+        text-align: left
+    }
+}
+
+.contact-modal .contact-modal-intro {
+    margin-bottom: 40px;
+    font-size: 1.25em;
+    text-align: center
+}
+
+@media (max-width: 568px){.contact-modal .contact-modal-intro {
+        margin-bottom: 20px;
+        font-size: 1.125em;
+        text-align: left
+    }
+}
+
+.contact-modal .contact-modal-note {
+    margin: 30px 0;
+    text-align: center
+}
+
+@media (max-width: 568px){.contact-modal .contact-modal-note {
+        text-align: left
+    }
+}
+
+/*Not implemented in the current version of the website*/
+/*.contact-modal .check-buttons {
+    font-size: 0;
+    text-align: center
+}
+
+.contact-modal .check-buttons .check-button {
+    width: 18%;
+    font-size: 16px
+}
+
+.contact-modal .check-buttons .check-button+.check-button {
+    margin-left: 2%
+}
+
+@media (max-width: 568px){.contact-modal .check-buttons .check-button {
+        width: 49%
+    }
+
+    .contact-modal .check-buttons .check-button+.check-button {
+        margin-left: 0
+    }
+
+    .contact-modal .check-buttons .check-button:nth-child(even) {
+        margin-left: 2%;
+        clear: both
+    }
+}*/
+
+/*Used to center the contact form between the to types*/
+.contact-modal .switch-form-type {
+    margin-bottom: 40px;
+    font-size: 0;
+    text-align: center
+}
+
+@media (max-width: 568px){.contact-modal .switch-form-type {
+        margin-bottom: 20px
+    }
+}
+
+.contact-modal .switch-form-type a {
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #7f8589;
+    background: transparent;
+    border-radius: 0;
+    color: #7c8286;
+    font-size: 16px
+}
+
+.contact-modal .switch-form-type a:first-child {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: none
+}
+
+.contact-modal .switch-form-type a:last-child {
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left: none
+}
+
+.contact-modal .switch-form-type a.active {
+    background: #5dbb55;
+    border-color: #5dbb55;
+    color: white
+}
+
+@media (max-width: 568px){.contact-modal .switch-form-type a {
+        padding: 0;
+        width: 50%;
+        font-size: 14px;
+        text-align: center
+    }
+}
+
+.form-row {
+    margin: 20px 0
+}
+
+.form-row.two-up label+label {
+    margin-top: 20px
+}
+
+@media (min-width: 1024px){.form-row.two-up:after {
+        content: "";
+        display: table;
+        clear: both
+    }
+
+    .form-row.two-up label {
+        float: left;
+        padding-right: 50px;
+        width: 50%
+    }
+
+    .form-row.two-up label+label {
+        margin-top: 0
+    }
+
+    .form-row.two-up label:last-child {
+        padding-right: 0px;
+        padding-left: 50px
+    }
+
+    .form-row.two-up label:last-child .caption {
+        left: -50px
+    }
+}
+
+.form-row label {
+    display: block;
+    position: relative;
+    margin: 0;
+    width: 100%
+}
+
+.form-row label.animate input:focus+.caption, .form-row label.animate textarea:focus+.caption,
+.form-row label.animate select:focus+.caption {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    transform: translateY(0px)
+}
+
+.form-row label .caption {
+    position: absolute;
+    top: 20px;
+    left: -100px;
+    padding-right: 20px;
+    width: 100px;
+    color: rgba(123, 127, 132, 0.6);
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    opacity: 0;
+    text-align: right;
+    text-transform: uppercase;
+    -webkit-transform: translateY(25px);
+    -moz-transform: translateY(25px);
+    -ms-transform: translateY(25px);
+    -o-transform: translateY(25px);
+    transform: translateY(25px);
+    -webkit-transition: opacity 0.24s ease-out, -webkit-transform 0.24s ease-out;
+    -moz-transition: opacity 0.24s ease-out, -moz-transform 0.24s ease-out;
+    -o-transition: opacity 0.24s ease-out, -o-transform 0.24s ease-out;
+    transition: opacity 0.24s ease-out, transform 0.24s ease-out
+}
+
+.form-container {
+    position: relative
+}
+
+/*Contact form CSS*/
+.contact-form {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    left: 12px
+}
+
+.contact-form .form-header .contact-modal-title, .contact-form .form-header .contact-modal-intro {
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    -o-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease
+}
+
+.contact-form .form-body {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
+    -o-transition: -o-transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease
+}
+
+.contact-form.active {
+    display: block
+}
+
+.contact-form.active.animate .form-header .contact-modal-title,
+.contact-form.active.animate .form-header .contact-modal-intro {
+    opacity: 1
+}
+
+.contact-form.active.animate .form-body {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1
+}
+
+.contact-form.active.animate.out .form-header .contact-modal-title,
+.contact-form.active.animate.out .form-header .contact-modal-intro {
+    opacity: 0
+}
+
+.contact-form.active.animate.out .form-header .switch-form-type {
+    display: none
+}
+
+.contact-form.active.animate.out .form-body {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    opacity: 0
+}
+
+.contact-form input[type='text'], .contact-form input[type='email'],
+.contact-form input[type='tel'], .contact-form textarea {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #7f8589;
+    background: transparent;
+    border-radius: 0;
+    color: white;
+    font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: none;
+    -webkit-transition: border-color 0.24s ease-out;
+    -moz-transition: border-color 0.24s ease-out;
+    -o-transition: border-color 0.24s ease-out;
+    transition: border-color 0.24s ease-out
+}
+
+@media (max-width: 568px){.contact-form input[type='text'], .contact-form input[type='email'],
+    .contact-form input[type='tel'], .contact-form textarea {
+        font-size: 1.125em
+    }
+}
+
+.contact-form input[type='text']::-webkit-input-placeholder,
+.contact-form input[type='email']::-webkit-input-placeholder, .contact-form input[type='tel']::-webkit-input-placeholder,
+.contact-form textarea::-webkit-input-placeholder {
+    color: #7f8589
+}
+
+.contact-form input[type='text']:focus, .contact-form input[type='email']:focus,
+.contact-form input[type='tel']:focus, .contact-form textarea:focus {
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none
+}
+
+.contact-form input[type='text'], .contact-form input[type='email'],
+.contact-form input[type='tel'] {
+    height: 60px
+}
+
+.contact-form textarea {
+    padding-top: 15px;
+    min-height: 60px;
+    resize: none
+}
+
+.contact-form textarea.autosize {
+    -webkit-transition: height 0.24s ease-out;
+    -moz-transition: height 0.24s ease-out;
+    -o-transition: height 0.24s ease-out;
+    transition: height 0.24s ease-out
+}
+
+.contact-form input[type='submit'] {
+    display: block;
+    margin: 60px auto 0;
+    height: 51px;
+    line-height: 51px;
+    background: #5dbb55;
+    font-size: 1.1em;
+    font-weight: 700;
+    -webkit-transition: background-color 0.24s ease-out;
+    -moz-transition: background-color 0.24s ease-out;
+    -o-transition: background-color 0.24s ease-out;
+    transition: background-color 0.24s ease-out
+}
+
+.contact-form input[type='submit']:hover, .contact-form input[type='submit']:focus {
+    background: #65cd5d
+}
+
+.upload-sprite, .upload-failed, .upload-file, .upload-uploaded,
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item:before,
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item.failed:before,
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item.uploaded:before {
+    background: url("images/uploadCloud.png") no-repeat
+}
+
+.upload-failed {
+    background-position: 0 -16px
+}
+
+.upload-file {
+    background-position: 0 -32px
+}
+
+.upload-uploaded {
+    background-position: 0 0
+}
+
+.remote-file-uploader {
+    margin: 40px 0
+}
+
+@media (max-width: 568px){.remote-file-uploader {
+        display: none
+    }
+}
+
+.remote-file-uploader .remote-file-uploader-output {
+    display: block
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list {
+    margin: 0;
+    list-style-type: none
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item {
+    padding: 5px 20px;
+    overflow: hidden;
+    font-size: 1.125em
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item:before {
+    content: "";
+    float: left;
+    display: block;
+    margin: 6px 8px 0 0;
+    width: 16px;
+    height: 16px;
+    background-position: 0 -32px
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item.failed:before {
+    background-position: 0 -16px
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item.uploaded {
+    color: #bdc3c7
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item.uploaded:before {
+    background-position: 0 0
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item>span,
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item>a {
+    float: left
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item .name {
+    padding-right: 10px
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item .type {
+    display: none
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item .remove {
+    padding-left: 10px
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item progress {
+    float: right;
+    margin-top: 10px;
+    width: 200px;
+    height: 6px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item progress::-webkit-progress-bar {
+    background-color: #616366
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item progress::-webkit-progress-value {
+    background-color: #31a9ea
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item progress::-moz-progress-bar {
+    background-color: #616366
+}
+
+.remote-file-uploader .remote-file-uploader-output .remote-file-uploader-output-list .remote-file-uploader-output-list-item progress::-moz-progress-value {
+    background-color: #31a9ea
+}
+
+.remote-file-uploader .remote-file-uploader-dropzone {
+    padding: 1em 0;
+    border: 1px dashed #7f8589;
+    border-radius: 5px
+}
+
+.remote-file-uploader .remote-file-uploader-dropzone.drag-enter {
+    border-color: orange
+}
+
+.remote-file-uploader .remote-file-uploader-dropzone-label {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 0.875em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase
+}
+
+/*Check buttons for a form, this is not implemented yet*/
+/*.check-buttons {
+    margin: 40px 0
+}
+
+.check-buttons h3 {
+    color: #7f8589;
+    font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", sans-serif;
+    font-size: 1.5em;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center
+}
+
+.check-button {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: 46px;
+    line-height: 46px;
+    text-align: center
+}
+
+.check-button input, .check-button input+.label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer
+}
+
+.check-button .label {
+    padding: 0;
+    border: 1px solid #7f8589;
+    width: 100%;
+    height: 100%;
+    z-index: 1024;
+    background: transparent;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.24s ease-out, border-color 0.24s ease-out, color 0.24s ease-out;
+    -moz-transition: background-color 0.24s ease-out, border-color 0.24s ease-out, color 0.24s ease-out;
+    -o-transition: background-color 0.24s ease-out, border-color 0.24s ease-out, color 0.24s ease-out;
+    transition: background-color 0.24s ease-out, border-color 0.24s ease-out, color 0.24s ease-out
+}
+
+.check-button input {
+    z-index: 512;
+    visibility: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+.check-button input:focus, .check-button input:hover {
+    outline: none
+}
+
+.check-button input:focus+.label, .check-button input:hover+.label {
+    border-color: #31a9ea;
+    color: #31a9ea
+}
+
+.check-button input:checked {
+    outline: none
+}
+
+.check-button input:checked+.label {
+    background: #31a9ea;
+    border-color: #31a9ea;
+    color: #343a3f !important
+}*/
+
+.form-sprite, .form-fail, .form-sending, .form-success, #form-state-sending h1:before,
+#form-state-success h1:before, #form-state-fail-server h1:before,
+#form-state-fail-email h1:before {
+    background: url("/images/form-sd1bfa43875-f7e49af0.png") no-repeat
+}
+
+.form-fail {
+    background-position: 0 -36px
+}
+
+.form-sending {
+    background-position: 0 -72px
+}
+
+.form-success {
+    background-position: 0 0
+}
+
+.form-state {
+    display: none;
+    text-align: center
+}
+
+.form-state.active {
+    display: block
+}
+
+.form-state h1 {
+    color: white
+}
+
+.form-state h1:before {
+    content: "";
+    display: block;
+    margin: 0 auto 25px;
+    width: 36px;
+    height: 36px
+}
+
+.form-state p {
+    color: #7d8387;
+    font-size: 1.4em
+}
+
+.form-state .button {
+    margin: 60px auto 0;
+    height: 51px;
+    line-height: 51px;
+    background: #5dbb55;
+    font-size: 1.1em;
+    font-weight: 700;
+    -webkit-transition: background-color 0.24s ease-out;
+    -moz-transition: background-color 0.24s ease-out;
+    -o-transition: background-color 0.24s ease-out;
+    transition: background-color 0.24s ease-out
+}
+
+.form-state .button:hover, .form-state .button:focus {
+    background: #65cd5d
+}
+
+#form-state-sending h1:before {
+    background-position: 0 -72px
+}
+
+#form-state-success h1:before {
+    background-position: 0 0
+}
+
+#form-state-fail-server h1:before, #form-state-fail-email h1:before {
+    background-position: 0 -36px
+}
