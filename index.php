@@ -63,7 +63,6 @@
                         <a class="page-scroll" href="#report">Report</a>
                     </li>
                     <li>
-                        <!--<a class="page-scroll" href="#contact">Contact</a>-->
                         <li><a class="navigation-link contact contact-link" data-modal="contact" href="#contact">Contact</a></li>
                     </li>
                 </ul>
@@ -89,12 +88,46 @@
             </div>
         </div>
     </header>
-
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- Get random subject line Section -->
     <section id="get" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-				
+            	<form method="POST">
+            		<input type="submit" name="submit" value="Submit" />
+            	</form>
+				<?php
+					
+					/*if (!isset($_POST['submit'])){
+						echo "<strong>Error!</strong>";
+					}*/
+					
+					if(isset($_POST['submit'])) {
+						getALine();
+					}
+					
+					function getALine(){
+						include 'secure/secure.php';
+					
+						$link = mysqli_connect($HOSTNAME, $USERNAME, $PASSWORD, $DBNAME);
+						if (!$link) {
+							die('Could not connect: ' . mysql_error());
+						}
+						$idnum = rand(0, 5);
+						$stmt = $link->prepare("SELECT line FROM subjectLine WHERE id= $idnum");
+						$stmt->execute();
+
+						$stmt->store_result();
+						$stmt->bind_result($subjectLine);
+
+						while($stmt->fetch()){
+							?><h1><?php echo "Your random subject line is:" ?></h1> <h3><?php echo "$subjectLine\n"; ?></h3> <?php
+						}
+
+						$stmt->close();
+						mysqli_close ($link);
+					}
+				?>
             </div>
         </div>
     </section>
@@ -106,7 +139,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Suggest A Line</h2>
                     <p></p>
-                    <!--<a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>-->
+                    
                 </div>
             </div>
         </div>
@@ -119,34 +152,11 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Report A Line</h2>
                     <p></p>
-                    <!--<a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>-->
+                    
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Random Subject Line</h2>
-                <p>Feel free to email us to provide some feedback on our site, give us suggestions for new lines, improvements, or just to say hello!</p>
-                <p><a href="mailto:admin@randomsubjectline.com">admin@randomsubjectline.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/RandSubjectLine" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/gmgq72/RandomSubjectLine" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/randomsubjectline" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>-->
 
     <!-- Contact Section -->
    	<div class='contact-modal modal'>
