@@ -20,16 +20,28 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    
-    
+	
+	<script>
+	function showLine(){
+			$(document).ready(function(){
+				$('.grabLineBtn').click(function(){
+					var clickBtnValue = $(this).val();
+					var ajaxurl = 'getLine.php',
+					data =  {'action': clickBtnValue};
+					$.post(ajaxurl, data, function(response) {
+						// Response div goes here.
+						document.getElementById("randomLine").innerHTML = response;
+						//alert("action performed successfully");
+					});
+				});
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+			});
+		}
+	function reportLine(){
+		var response = "Your intolerance for free speech has been noted.";
+		document.getElementById("reportLine").innerHTML = response
+	}
+	</script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -88,71 +100,52 @@
             </div>
         </div>
     </header>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	
+	<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- Get random subject line Section -->
     <section id="get" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-            	<form method="POST">
-            		<input type="submit" name="submit" value="Submit" />
-            	</form>
-				<?php
-					
-					/*if (!isset($_POST['submit'])){
-						echo "<strong>Error!</strong>";
-					}*/
-					
-					if(isset($_POST['submit'])) {
-						getALine();
-					}
-					
-					function getALine(){
-						include 'secure/secure.php';
-					
-						$link = mysqli_connect($HOSTNAME, $USERNAME, $PASSWORD, $DBNAME);
-						if (!$link) {
-							die('Could not connect: ' . mysql_error());
-						}
-						$idnum = rand(0, 5);
-						$stmt = $link->prepare("SELECT line FROM subjectLine WHERE id= $idnum");
-						$stmt->execute();
-
-						$stmt->store_result();
-						$stmt->bind_result($subjectLine);
-
-						while($stmt->fetch()){
-							?><h1><?php echo "Your random subject line is:" ?></h1> <h3><?php echo "$subjectLine\n"; ?></h3> <?php
-						}
-
-						$stmt->close();
-						mysqli_close ($link);
-					}
-				?>
+            <br><br>
+            <div id=randomLine></div>
+				<br><br><br><br><br><br><br><br><br><br><br><br>
+            	<input class="grabLineBtn" type="submit" name="submit" value="Grab a Line" onclick="showLine()" />
             </div>
         </div>
+        <br><br>
+        <br><br>
     </section>
-    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- Suggest a Line Section -->
     <section id="suggest" class="content-section text-center">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Suggest A Line</h2>
-                    <p></p>
-                    
+                    <h4>Do you have a random subject line you would like to submit?</h4>
+						<a href = suggestLine.php class="grabLineBtn">Suggest a Line</a>
+                    <br><br>
                 </div>
             </div>
         </div>
     </section>
-
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- Report Section -->
     <section id="report" class="content-section text-center">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Report A Line</h2>
-                    <p></p>
-                    
+                    <h4 id=reportLine></h4>
+                    <input class="grabLineBtn" type="submit" name="submit" value="Report a Line" onclick="reportLine()" />
                 </div>
             </div>
         </div>
@@ -170,7 +163,7 @@
 					<p class='contact-modal-intro'>Tell us your suggestion so we can improve Random Subject Line</p>
 					<div class='switch-form-type'>
 						<a class='active' data-form='simple' href='#'>Suggestion Form</a>
-						<a data-form='advanced' href='#'>Detailed Submission Form</a>
+						<a data-form='advanced' href='#'>Want to work for us?</a>
 					</div>
 				</header>
 				<div class='form-body'>
@@ -200,11 +193,11 @@
 			</div>
 			<form method="post" class="contact-form" id="contact-form-advanced" action="/contact" accept-charset="UTF-8"><input name="authenticity_token" type="hidden" /><div class='form-container'>
 				<header class='form-header'>
-					<h1 class='contact-modal-title'>Detailed Submission Form</h1>
+					<h1 class='contact-modal-title'>Want to work for us?</h1>
 					<p class='contact-modal-intro'>Get descriptive, this will help us understand you better&#10;</p>
 					<div class='switch-form-type'>
-						<a data-form='simple' href='#'>Quick Submission Form</a>
-						<a class='active' data-form='advanced' href='#'>Detailed Submission Form</a>
+						<a data-form='simple' href='#'>Suggestion Form</a>
+						<a class='active' data-form='advanced' href='#'>Want to work for us?</a>
 					</div>
 				</header>
 				<div class='form-body'>
@@ -247,8 +240,8 @@
 		<div class='container'>
 			<div class='form-state' id='form-state-success'>
 				<div class='form-state-container'>
-					<h1>Thanks</h1>
-					<p>We'll do our best to respond within a few business days.</p>
+					<h1>Oops! Our contact form is currently broken!</h1>
+					<p>Please email admin@randomsubjectline.com</p>
 				</div>
 			</div>
 		</div>
