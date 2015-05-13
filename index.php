@@ -20,7 +20,20 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    
+    <!--Google Analyitcs-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-62915802-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
 	
+	<!--AJAX to grab subject line from DB-->
 	<script>
 	function showLine(){
 			$(document).ready(function(){
@@ -31,7 +44,6 @@
 					$.post(ajaxurl, data, function(response) {
 						// Response div goes here.
 						document.getElementById("randomLine").innerHTML = response;
-						//alert("action performed successfully");
 					});
 				});
 
@@ -110,20 +122,48 @@
     <br>
     <br>
     <br>
+    <div class="row">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Random Subject Line -->
+				<ins class="adsbygoogle"
+					 style="display:block"
+					 data-ad-client="ca-pub-6738818154331625"
+					 data-ad-slot="2618499191"
+					 data-ad-format="auto"></ins>
+				<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+    
     <!-- Get random subject line Section -->
     <section id="get" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
             <br><br>
-            <div id=randomLine></div>
-				<br><br><br><br><br><br><br><br><br><br><br><br>
+            <div>
+            	<h1>Your random subject line is:</h1>
+            	<br><br>
+            	<div id=randomLine></div>
+            </div>
+				<br><br><br><br><br><br>
             	<input class="grabLineBtn" type="submit" name="submit" value="Grab a Line" onclick="showLine()" />
             </div>
         </div>
         <br><br>
         <br><br>
     </section>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Random Subject Line 2 -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-6738818154331625"
+		 data-ad-slot="7048698796"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+    <br><br><br><br><br><br><br>
     <!-- Suggest a Line Section -->
     <section id="suggest" class="content-section text-center">
         <div class="download-section">
@@ -285,7 +325,9 @@
         </div>
     </section>
     	<div class="container text-center">
-            <p>Copyright &copy; randomsubjectline.com</p>
+            <p>Copyright &copy; 2015 randomsubjectline.com</p>
+            <a href = terms-conditions.html>Terms and Conditions</a> |
+            <a href = privacypolicy.html>Privacy Policy</a>
         </div>
     </footer>
 
