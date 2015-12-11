@@ -6563,4 +6563,9 @@ button.close {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+
+#randomLine {
+	height: 100px;
+	display: inline-block !important;
+}
+

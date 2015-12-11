@@ -4,87 +4,48 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Random Subject Line Generator">
-    <meta name="author" content="George Gilmartin">
-    <meta name="keywords" content="random, subject, line, generator, yahoo">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <link rel="icon" href="img/question.png">
 
     <title>Random Subject Line</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    
-    <!--Google Analyitcs-->
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-62915802-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	
-	<!--AJAX to grab subject line from DB-->
 	<script>
 	function showLine(){
-		var clickBtnValue = "Get a Line";
-		var ajaxurl = 'getLine.php',
-		data =  {'action': clickBtnValue};
-		console.log(data);
-		$.post(ajaxurl, data, function(response) {
-			// Response div goes here.
-			console.log(response);
-			document.getElementById("randomLine").innerHTML = response;
-		});
-	}
+			$(document).ready(function(){
+				$('.grabLineBtn').click(function(){
+					var clickBtnValue = $(this).val();
+					var ajaxurl = 'getLine.php',
+					data =  {'action': clickBtnValue};
+					$.post(ajaxurl, data, function(response) {
+						// Response div goes here.
+						document.getElementById("randomLine").innerHTML = response;
+						//alert("action performed successfully");
+					});
+				});
+
+			});
+		}
 	function reportLine(){
 		var response = "Your intolerance for free speech has been noted.";
 		document.getElementById("reportLine").innerHTML = response
 	}
 	</script>
-	
-	<!-- Cookie code -->
-	<script language = "javascript">
-		function GetCookie(name) {
-		  var arg=name+"=";
-		  var alen=arg.length;
-		  var clen=document.cookie.length;
-		  var i=0;
-		  while (i<clen) {
-			var j=i+alen;
-			if (document.cookie.substring(i,j)==arg)
-			  return "here";
-			i=document.cookie.indexOf(" ",i)+1;
-			if (i==0) break;
-		  }
-		  return null;
-		}
-		var visit = GetCookie("COOKIE1");
-		if (visit == null){
-		    var d = new Date();
-			d.setTime(d.getTime() + (24*60*60*1000));
-			var expires = "expires="+d.toUTCString();
-			window.name = "thiswin";
-			newwin=open("popwin.html", "dispwin",  
-			"width=250,height=300,scrollbars=no,menubar=no");
-		   document.cookie="COOKIE1=here;" + expires;
-		}
-	</script>
-	<script src='https://www.google.com/recaptcha/api.js'></script>
-	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -105,6 +66,9 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                    	<a class="page-scroll" href="#get">Get</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#suggest">Suggest</a>
                     </li>
                     <li>
@@ -119,37 +83,47 @@
         </div>
         <!-- /.container -->
     </nav>
-    
-    
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Random Subject Line</h1>
+                        <p class="intro-text">Use a randomly generated subject line for anything</p>
+                        <a href="#get" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	<!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	
+	<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- Get random subject line Section -->
     <section id="get" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
             <br><br>
-            <div>
-            	<h1>Your random subject line is:</h1>
-            	<br>
-            	<div id=randomLine></div>
-            </div>
-				<br><br><br><br><br><br>
+            <div id=randomLine></div>
+				<br><br><br><br><br><br><br><br><br><br><br><br>
             	<input class="grabLineBtn" type="submit" name="submit" value="Grab a Line" onclick="showLine()" />
             </div>
         </div>
         <br><br>
         <br><br>
     </section>
-    <br><br><br>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- Random Subject Line 2 -->
-	<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-client="ca-pub-6738818154331625"
-		 data-ad-slot="7048698796"
-		 data-ad-format="auto"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- Suggest a Line Section -->
     <section id="suggest" class="content-section text-center">
         <div class="download-section">
@@ -183,7 +157,7 @@
         	<a class='modal-close' href='#'>Close</a>
     	</div>
 		<div class='container form-container'>
-			<form method="post" class="contact-form active animate" id="contact-form-simple" action="contact.php" accept-charset="UTF-8"><input name="authenticity_token" type="hidden" /><div class='form-container'>
+			<form method="post" class="contact-form active animate" id="contact-form-simple" action="/contact" accept-charset="UTF-8"><input name="authenticity_token" type="hidden" /><div class='form-container'>
 				<header class='form-header'>
 					<h1 class='contact-modal-title'>Have a suggestion for us?</h1>
 					<p class='contact-modal-intro'>Tell us your suggestion so we can improve Random Subject Line</p>
@@ -217,7 +191,7 @@
 				  </div>
 				</form>
 			</div>
-			<form method="post" class="contact-form" id="contact-form-advanced" action="contact.php" accept-charset="UTF-8"><input name="authenticity_token" type="hidden" /><div class='form-container'>
+			<form method="post" class="contact-form" id="contact-form-advanced" action="/contact" accept-charset="UTF-8"><input name="authenticity_token" type="hidden" /><div class='form-container'>
 				<header class='form-header'>
 					<h1 class='contact-modal-title'>Want to work for us?</h1>
 					<p class='contact-modal-intro'>Get descriptive, this will help us understand you better&#10;</p>
@@ -311,9 +285,7 @@
         </div>
     </section>
     	<div class="container text-center">
-            <p>Copyright &copy; 2015 randomsubjectline.com</p>
-            <a href = terms-conditions.html>Terms and Conditions</a> |
-            <a href = privacypolicy.html>Privacy Policy</a>
+            <p>Copyright &copy; randomsubjectline.com</p>
         </div>
     </footer>
 
