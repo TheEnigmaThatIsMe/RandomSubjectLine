@@ -29,7 +29,7 @@ Prerequisites:
 
 ## Installation
 ```bash
-git clone https://github.com/your-username/subject-line-generator.git
+git clone https://github.com/TheEnigmaThatIsMe/RandomSubjectLine.git
 cd subject-line-generator
 npm install
 ```
