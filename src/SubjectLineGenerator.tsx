@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Typography, Button, Card, CardContent, MenuItem, Select, FormControl, InputLabel } from "@mui/material";
+import { Container, Typography, Button, Card, CardContent, MenuItem, Select, FormControl } from "@mui/material";
 import OpenAI from "openai";
 
 const openai = new OpenAI({ apiKey: "YOUR_OPENAI_API_KEY", dangerouslyAllowBrowser: true });
@@ -41,20 +41,22 @@ const SubjectLineGenerator: React.FC = () => {
         <Container style={{ textAlign: "center", marginTop: "50px", color: "white" }}>
             <Typography variant="h4" gutterBottom>Random Subject Line Generator</Typography>
             <FormControl style={{ minWidth: 200, marginBottom: 20, color: "white" }}>
-                <InputLabel sx={{ color: "white" }}>Select Style</InputLabel>
-                <Select sx={{ color: "white" }} value={selectedStyle} onChange={(e) => setSelectedStyle(e.target.value as string)}>
+                <Select sx={{ color: "black", backgroundColor: "whitesmoke" }} value={selectedStyle} onChange={(e) => setSelectedStyle(e.target.value as string)}>
                     {styles.map((style) => (
                         <MenuItem key={style} value={style}>{style}</MenuItem>
                     ))}
                 </Select>
             </FormControl>
-            <Card style={{ margin: "20px auto", maxWidth: 500 }}>
-                <CardContent>
-                    <Typography variant="h5" color="primary">
-                        {subjectLine || "Click the button to generate a subject line"}
-                    </Typography>
-                </CardContent>
-            </Card>
+            {subjectLine && (
+                <Card style={{ margin: "20px auto", maxWidth: 500 }}>
+                    <CardContent>
+                        <Typography variant="h5" color="primary">
+                            { subjectLine }
+                        </Typography>
+                    </CardContent>
+                </Card>
+            )}
+            <br/>
             <Button variant="contained" color="primary" onClick={fetchSubjectLine} disabled={loading}>
                 {loading ? "Generating..." : "Generate Subject Line"}
             </Button>
