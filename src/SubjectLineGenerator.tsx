@@ -25,7 +25,7 @@ const SubjectLineGenerator: React.FC = () => {
         setLoading(true);
         try {
             const response = await openai.chat.completions.create({
-                model: "gpt-4",
+                model: "gpt-4o",
                 messages: [{ role: "user", content: `Generate a ${selectedStyle.toLowerCase()} email subject line.` }],
             });
             setSubjectLine(response.choices[0]?.message?.content || "Failed to generate subject line.");
