@@ -1,9 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 #root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  font-family: 'Anton', sans-serif;
-  width: fit-content;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {

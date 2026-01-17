@@ -1,0 +1,110 @@
+{
+  "Funny": [
+    "🎉 Your inbox called. It misses you already!",
+    "Warning: Opening this email may cause excessive smiling",
+    "This email is 99% amazing (the other 1% is the unsubscribe button)",
+    "We promise this isn't spam... probably",
+    "Your future self will thank you for opening this",
+    "Breaking: Local email achieves sentience, demands to be read",
+    "This subject line was written by a very tired marketer",
+    "Caution: May contain traces of awesome",
+    "We tried to make this boring but failed spectacularly",
+    "Plot twist: This email is actually interesting"
+  ],
+  "Serious": [
+    "Important Update: Action Required",
+    "Your Account Security Notice",
+    "Time-Sensitive Information Enclosed",
+    "Official Notice: Please Review",
+    "Critical Update for Your Records",
+    "Immediate Attention Required",
+    "Important Policy Changes Effective Soon",
+    "Your Response Needed: Account Verification",
+    "Annual Review: Please Confirm Your Information",
+    "Security Alert: Unusual Activity Detected"
+  ],
+  "Random": [
+    "Purple elephants and Tuesday thoughts",
+    "47 reasons why pancakes matter",
+    "The mystery of the missing semicolon",
+    "Clouds, coffee, and contemplation",
+    "When penguins dream of flying",
+    "Quantum entanglement and grocery lists",
+    "The philosophical implications of toast",
+    "Adventures in alphabetical order",
+    "Rubber ducks and existential questions",
+    "Socks, secrets, and serendipity"
+  ],
+  "Urgent": [
+    "⚠️ URGENT: Immediate Action Required",
+    "DEADLINE APPROACHING - Don't Miss This",
+    "FINAL NOTICE: Response Needed Today",
+    "🚨 Time-Sensitive: 24 Hours Remaining",
+    "CRITICAL: Your immediate attention needed",
+    "LAST CHANCE: Expires at Midnight",
+    "ACTION REQUIRED: Respond Within 48 Hours",
+    "URGENT: Your Account Needs Verification",
+    "⏰ FINAL HOURS: Don't Let This Expire",
+    "IMMEDIATE RESPONSE NEEDED"
+  ],
+  "Friendly": [
+    "Hey there! We've got something special for you 👋",
+    "Hope you're having a great day!",
+    "Quick hello from your friends at [Company]",
+    "Just checking in - how are things?",
+    "Sending good vibes your way! ✨",
+    "Thinking of you today!",
+    "We missed you! Let's catch up",
+    "A little something to brighten your day ☀️",
+    "You're awesome! Here's why...",
+    "Coffee break? Let's chat!"
+  ],
+  "Clickbait": [
+    "You Won't BELIEVE What Happened Next...",
+    "This ONE Simple Trick Changed Everything",
+    "The Secret They Don't Want You to Know",
+    "What Happens Next Will Shock You",
+    "Everyone's Talking About This (And You Should Too)",
+    "Doctors HATE This One Weird Trick",
+    "The Truth About [Topic] Will Blow Your Mind",
+    "What This Person Did Next Is Genius",
+    "This Changes EVERYTHING You Know About...",
+    "The Results Will Leave You Speechless"
+  ],
+  "Inspirational": [
+    "✨ Today is Your Day to Shine",
+    "Believe in the Possibilities",
+    "Your Journey to Greatness Starts Here",
+    "Unlock Your Full Potential Today",
+    "Dream Big, Achieve Bigger 🌟",
+    "You Are Capable of Amazing Things",
+    "Transform Your Life Starting Now",
+    "The Power to Change Is Within You",
+    "Rise Above and Reach New Heights",
+    "Your Success Story Begins Today"
+  ],
+  "Question-Based": [
+    "Are You Making This Common Mistake?",
+    "What If Everything Could Change Today?",
+    "Ready to Take Your Next Big Step?",
+    "Have You Seen This Yet?",
+    "What's Holding You Back from Success?",
+    "Could This Be the Answer You've Been Looking For?",
+    "When Was the Last Time You...?",
+    "Why Do So Many People Miss This Opportunity?",
+    "How Would Your Life Change If...?",
+    "What Would You Do With Extra Time?"
+  ],
+  "Emoji-Powered": [
+    "🎁 Special Surprise Inside! Open Now 🎉",
+    "💰 Limited Time Offer 💰 Don't Miss Out!",
+    "🔥 Hot Deal Alert 🔥 Expires Soon!",
+    "⭐ You're Invited! ⭐ RSVP Today",
+    "🚀 Ready for Liftoff? 🌙 Let's Go!",
+    "💎 Exclusive Access 💎 VIP Only",
+    "🎯 Achievement Unlocked 🏆 Check This Out!",
+    "☕ Morning Boost ⚡ Start Your Day Right",
+    "🌈 Something Colorful This Way Comes 🦄",
+    "📢 Big News! 📣 You'll Want to Hear This"
+  ]
+}
